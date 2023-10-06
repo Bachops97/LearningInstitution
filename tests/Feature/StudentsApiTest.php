@@ -18,13 +18,13 @@ class StudentsApiTest extends TestCase
      */
     public function testGetAllStudents()
     {
-        // Arrange: Create some sample students in the database
+
         Student::factory()->count(3)->create();
 
-        // Act: Make a GET request to the API endpoint
+
         $response = $this->get('/api/students');
 
-        // Assert: Verify the response status code and JSON structure
+
         $response->assertStatus(200)
                  ->assertJsonStructure([
                      '*' => [
